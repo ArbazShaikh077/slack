@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slack/core/theme/color_const.dart';
+import 'package:slack/features/onboarding/presentation/widgets/sign_in_bottom_sheet.dart';
 
 class FirstOnboardingButtonAnimation extends StatelessWidget {
   const FirstOnboardingButtonAnimation({super.key});
@@ -36,7 +37,13 @@ class FirstOnboardingButtonAnimation extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.r)),
+                  context: context,
+                  builder: (_) => const SignInBottomSheet());
+            },
             style: ButtonStyle(
               padding: MaterialStateProperty.all(
                   EdgeInsets.symmetric(vertical: 10.h)),
