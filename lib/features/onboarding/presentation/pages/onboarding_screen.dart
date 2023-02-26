@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slack/core/theme/color_const.dart';
+import 'package:slack/features/onboarding/presentation/widgets/first_onboarding_button_animation.dart';
+import 'package:slack/features/onboarding/presentation/widgets/first_onboarding_image_animation.dart';
+import 'package:slack/features/onboarding/presentation/widgets/first_onboarding_text_animation.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -11,78 +15,26 @@ class OnBoarding extends StatefulWidget {
 class _OnBoardingState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     return Scaffold(
       backgroundColor: ColorConst.kPurple,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 120,
+              height: 70.h,
             ),
-            Text(
-              "Picture this: a\nmessaging app,",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30),
-            ),
-            Text(
-              "but build for\nwork.",
-              style: TextStyle(
-                  color: Colors.yellow,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30),
-            ),
+            const FirstOnboardingTextAnimation(),
             SizedBox(
-              height: 400,
+              height: 90.h,
             ),
+            const FirstOnboardingImageAnimation(),
             SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Go on...",
-                    style: TextStyle(
-                        color: ColorConst.kPurple,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15),
-                  ),
-                  style: ButtonStyle(
-                      padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 15)),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7))),
-                      overlayColor: MaterialStateProperty.all(Colors.black12),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.white))),
+              height: 100.h,
             ),
-            SizedBox(
-              height: 20,
-            ),
-            SizedBox(
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Sign in",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15),
-                ),
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 15)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7))),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  overlayColor: MaterialStateProperty.all(Colors.white10),
-                ),
-              ),
-            )
+            const FirstOnboardingButtonAnimation()
           ],
         ),
       ),
