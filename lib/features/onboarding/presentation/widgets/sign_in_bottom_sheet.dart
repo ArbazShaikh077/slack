@@ -37,7 +37,7 @@ class SignInBottomSheet extends StatelessWidget {
                         borderRadius: BorderRadius.circular(7.r))),
                     overlayColor: MaterialStateProperty.all(Colors.white10),
                     backgroundColor:
-                        MaterialStateProperty.all(ColorConst.kGrren)),
+                        MaterialStateProperty.all(Colors.indigoAccent[400])),
                 label: Text(
                   "Continue with Google",
                   style: TextStyle(
@@ -47,7 +47,52 @@ class SignInBottomSheet extends StatelessWidget {
                 )),
           ),
           SizedBox(
-            height: 50.h,
+            height: 5.h,
+          ),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton.icon(
+                icon: Icon(Icons.email_rounded),
+                onPressed: () {},
+                style: ButtonStyle(
+                    padding: MaterialStateProperty.all(
+                        EdgeInsets.symmetric(vertical: 8.h)),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.r))),
+                    overlayColor: MaterialStateProperty.all(Colors.white10),
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.green[800])),
+                label: Text(
+                  "Continue with Email",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15.sp),
+                )),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          RichText(
+              text: TextSpan(children: [
+            TextSpan(
+                text: 'or ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.bold,
+                )),
+            TextSpan(
+              text: 'Sign In with Workspace URL',
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 13.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ])),
+          SizedBox(
+            height: 20.h,
           )
         ],
       ),
