@@ -53,7 +53,9 @@ class SignInBottomSheet extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton.icon(
                 icon: Icon(Icons.email_rounded),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all(
                         EdgeInsets.symmetric(vertical: 8.h)),
