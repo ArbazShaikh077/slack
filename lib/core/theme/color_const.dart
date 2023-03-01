@@ -5,5 +5,5 @@ class ColorConst {
   static const Color kBlack = Color.fromRGBO(27, 29, 35, 1.0);
   static const Color kWhite = Color.fromRGBO(191, 193, 196, 1.0);
   static const Color kBlue = Color.fromRGBO(93, 133, 231, 1.0);
-  static const Color kGreen = Color(0xff2EB67D);
+  static const Color kGreen = Color.fromRGBO(119, 183, 110, 1.0);
 }

@@ -48,6 +48,9 @@ dependencies:
   #For prebuild animation
   flutter_animate: ^4.1.0
 
+  #For displaying svgs
+  flutter_svg: ^2.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

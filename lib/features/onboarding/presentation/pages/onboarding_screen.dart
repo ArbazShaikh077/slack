@@ -24,7 +24,7 @@ class _OnBoardingState extends State<OnBoarding> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 70.h,
+              height: 80.h,
             ),
             const FirstOnboardingTextAnimation(),
             SizedBox(

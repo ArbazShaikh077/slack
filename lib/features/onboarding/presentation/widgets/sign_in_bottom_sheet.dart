@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:slack/core/theme/color_const.dart';
 
 class SignInBottomSheet extends StatelessWidget {
@@ -11,7 +12,7 @@ class SignInBottomSheet extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: ColorConst.kBlack, borderRadius: BorderRadius.circular(15.r)),
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -28,13 +29,19 @@ class SignInBottomSheet extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-                icon: Icon(Icons.email_rounded),
+                icon: SvgPicture.asset(
+                  'assets/images/google.svg',
+                  height: 12.h,
+                  width: 12.h,
+                  colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                ),
                 onPressed: () {},
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all(
-                        EdgeInsets.symmetric(vertical: 8.h)),
+                        EdgeInsets.symmetric(vertical: 10.h)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(7.r))),
+                        borderRadius: BorderRadius.circular(5.r))),
                     overlayColor: MaterialStateProperty.all(Colors.white10),
                     backgroundColor:
                         MaterialStateProperty.all(Colors.indigoAccent[400])),
@@ -52,18 +59,24 @@ class SignInBottomSheet extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton.icon(
-                icon: Icon(Icons.email_rounded),
+                icon: SvgPicture.asset(
+                  'assets/images/email.svg',
+                  height: 16.h,
+                  width: 16.h,
+                  colorFilter:
+                      const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                ),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all(
-                        EdgeInsets.symmetric(vertical: 8.h)),
+                        EdgeInsets.symmetric(vertical: 10.h)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(7.r))),
+                        borderRadius: BorderRadius.circular(5.r))),
                     overlayColor: MaterialStateProperty.all(Colors.white10),
                     backgroundColor:
-                        MaterialStateProperty.all(Colors.green[800])),
+                        MaterialStateProperty.all(ColorConst.kGreen)),
                 label: Text(
                   "Continue with Email",
                   style: TextStyle(
