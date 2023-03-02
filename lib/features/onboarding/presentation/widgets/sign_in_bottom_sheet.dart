@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:slack/core/theme/color_const.dart';
+import 'package:slack/features/sign_in_with_email/pages/sign_in_with_email.dart';
 
 class SignInBottomSheet extends StatelessWidget {
   const SignInBottomSheet({super.key});
@@ -67,7 +68,8 @@ class SignInBottomSheet extends StatelessWidget {
                       const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 ),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const SignInWithEmail()));
                 },
                 style: ButtonStyle(
                     padding: MaterialStateProperty.all(
