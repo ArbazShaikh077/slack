@@ -36,7 +36,13 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
               style:
                   TextStyle(color: Colors.white60, fontWeight: FontWeight.w400),
             ),
-            TextField()
+            TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                errorBorder: InputBorder.none,
+              ),
+            )
           ],
         ),
       ),
